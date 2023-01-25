@@ -1,4 +1,4 @@
-## Book-Sharing-Library-Webpage
+## Book-Sharing Homepage
 + #### Language : PHP (Dynamically typed language)
 + #### WebServer : XAMPP 
 + #### Database : MySQL 
