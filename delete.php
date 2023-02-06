@@ -26,7 +26,7 @@ if(isset($_SESSION['login']))
 
 	body
 	{
-	  width : 700PX;
+	  width : 1000PX;
 	  height : 1500px;
 	  margin : 1em auto;
       background-color: #FDF5E6;
@@ -78,7 +78,7 @@ if(isset($_SESSION['login']))
     {
     echo "<table align='center' border='1'>
 	<tr>
-	<th>ID</th>
+	<th>NO</th>
 	<th>Reg_date</th>
 	<th>UserName</th>
 	<th>Title</th>
