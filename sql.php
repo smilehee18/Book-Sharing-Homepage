@@ -15,27 +15,7 @@ if(isset($_SESSION['login']))
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
-	<style>
-	html
-	{
-		background-color : #FFE4B5;
-	    background-image: url('https://cdn.pixabay.com/photo/2017/01/31/00/09/books-2022464_960_720.png');
-	    background-repeat : no-repeat;
-	    background-position: right top;
-	}
-
-	body
-	{
-	  width : 800PX;
-	  height : 1500px;
-	  margin : 1em auto;
-      background-color: #FDF5E6;
-	  border : 10px #CCFF33 double;
-	  text-align: center;
-
-	}
-</style>
-
+	<link href='style/style.css' rel='stylesheet'></link>
 </head>
 <body>
 	<?php
@@ -63,7 +43,7 @@ if(isset($_SESSION['login']))
 		echo "Error: " . $sql . mysqli_error($conn);
 	}
 
-    if (mysqli_query($conn, $sql1)) {
+        if (mysqli_query($conn, $sql1)) {
 	echo "<h3>The Book has been Borrowed Successfully</h3>";
 	}
 
@@ -71,12 +51,12 @@ if(isset($_SESSION['login']))
 	echo "Error: "  . mysqli_error($conn);
          }
 
-    $sql2 = "SELECT * FROM borrow order by id DESC";
+        $sql2 = "SELECT * FROM borrow order by id DESC";
 	$result = mysqli_query($conn, $sql2);
 
 	echo "<table align='center' border='1'>
 	<tr>
-	<th>ID</th>
+	<th>NO</th>
 	<th>Reg_date</th>
 	<th>UserName</th>
 	<th>Title</th>
@@ -89,17 +69,15 @@ if(isset($_SESSION['login']))
   	{
   	echo "<tr>";
   	echo "<td>" . $row['id'] . "</td>";
-    echo "<td>" . $row['reg_date'] . "</td>";
-    echo "<td>" . $row['username'] . "</td>";
-    echo "<td>" . $row['title'] . "</td>";
-    echo "<td>" . $row['author'] . "</td>";
+        echo "<td>" . $row['reg_date'] . "</td>";
+        echo "<td>" . $row['username'] . "</td>";
+        echo "<td>" . $row['title'] . "</td>";
+        echo "<td>" . $row['author'] . "</td>";
   	echo "<td>" . $row['return_date'] . "</td>";
   	echo "<td>" . $row['state'] . "</td>";
   	echo "</tr>";
   	}
 	echo "</table>";
-   
-   // $val = "SELECT return_date FROM borrow WHERE "
 	echo "<h3> You have to RETURN until 7 DAYS </h3>";
     
     echo "<ul type ='circle'>";
