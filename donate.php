@@ -56,15 +56,29 @@ if(isset($_SESSION['login']))
 		<input type='submit' value='submit' name='submit'> <br><br><br>
 	</form>
     
-    <?php
-    $servername = "localhost";
+       <?php
+        $servername = "localhost";
 	$username = "root";
 	$password = "";
 	$dbname = "Mylibraries";
 
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+        $conn = mysqli_connect($servername, $username, $password, $dbname);
+	
+	
+	if(isset($_POST['submit']))  //submit 버튼을 눌렀을 때
+	{
+	   $sql2 = "INSERT INTO ourbook (title, author, registrant)
+	   VALUES ('$_POST[title]','$_POST[author]','$_POST[name]')";
+	   if (mysqli_query($conn, $sql2)) {
+	     echo "<h3> Thank You, <br> Your donation recorded Successfully ! </h3>";
+	   } 
+	   else
+	   {
+	     echo "Error: " . $sql . mysqli_error($conn);
+	   }
+        }
 
-    $sql = "SELECT * FROM ourbook";
+        $sql = "SELECT * FROM ourbook";
 	$result = mysqli_query($conn, $sql);
 
 	echo "<table align='center' border='1'>
@@ -79,14 +93,14 @@ if(isset($_SESSION['login']))
 
 	while($row = mysqli_fetch_array($result))
   	{
-  	echo "<tr>";
-  	echo "<td>" . $row['id'] . "</td>";
-    echo "<td>" . $row['reg_date'] . "</td>";
-    echo "<td>" . $row['title'] . "</td>";
-    echo "<td>" . $row['author'] . "</td>";
-    echo "<td>" . $row['registrant'] . "</td>";
-    echo "<td>" . $row['state'] . "</td>";
-  	echo "</tr>";
+  	  echo "<tr>";
+  	  echo "<td>" . $row['id'] . "</td>";
+          echo "<td>" . $row['reg_date'] . "</td>";
+          echo "<td>" . $row['title'] . "</td>";
+          echo "<td>" . $row['author'] . "</td>";
+          echo "<td>" . $row['registrant'] . "</td>";
+          echo "<td>" . $row['state'] . "</td>";
+  	  echo "</tr>";
   	}
 	echo "</table>";
 	?>
