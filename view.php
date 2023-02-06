@@ -34,36 +34,7 @@ $con = mysqli_connect("localhost", "root", "", "mylibraries");
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>view.php</title>
-	<style>
-	div
-	{
-		text-align: center;
-	}
-	html 
-	{
-	  background-color : #FFE4B5;
-	  background-image: url('https://cdn.pixabay.com/photo/2017/01/31/00/09/books-2022464_960_720.png');
-	  background-repeat : no-repeat;
-	  background-position: right top;
-	}
-	body
-	{
-	  width : 1000px;
-	  height : auto;
-	  margin : 1em auto;
-      background-color: #FDF5E6;
-	  border : 10px #CCFF33 double;
-	  text-align: center;
-	}
-	table
-	{
-		border-collapse: collapse;
-	}
-	th, td {
-    padding: 10px;
-    text-align: center;
-  }
-	</style>
+	<link href='style/style.css' rel='stylesheet'></link>
 </head>
 <body>    
 	    <form action="writepost.php" method="POST">
@@ -166,9 +137,9 @@ $con = mysqli_connect("localhost", "root", "", "mylibraries");
              {
       	        echo "<td><a href='com_delete.php?id=".$mow['id']."&memo_id=". $mow['memo_id'] . "'>delete</a></td>"; //삭제 링크 당연히 추가
              }
-    	     echo "<tr>";
+    	     echo "<tr>";//행 출력
   	}
-  	echo "</table>"; //
+  	echo "</table>"; //테이블 출력의 끝지점
   ?>
 </body>
 </html>
