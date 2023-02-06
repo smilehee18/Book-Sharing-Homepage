@@ -122,53 +122,53 @@ $con = mysqli_connect("localhost", "root", "", "mylibraries");
 	</form>
 	<?php
 	  if(isset($_POST['save']) || isset($_POST['comment']))
-  	{
-  		$id = $_GET['id'];
- 	    $id =  stripslashes($id);
+  	  {
+  	    $id = $_GET['id'];
+ 	    $id =  stripslashes($id); 
  	    $id = trim($id,"'");
 
-      $comment = $_POST['comment'];
-      if(isset($_SESSION['login'])) {
-      $ql = "INSERT INTO comment (memo_id, content, name) VALUES ('$id', '$comment','$_SESSION[login]')";
-    }
-      elseif(isset($_SESSION['admin_login']))
-      {
-      	$ql = "INSERT INTO comment (memo_id, content, name) VALUES ('$id', '$comment','$_SESSION[admin_login]')";
-      }
-      mysqli_query($con,$ql);
-      $qul = "SELECT * FROM comment WHERE memo_id='$id'";
-      $val2 = mysqli_query($con,$qul);
+            $comment = $_POST['comment'];
+            if(isset($_SESSION['login'])) { //로그인한 사람이 사용자일 때
+             $ql = "INSERT INTO comment (memo_id, content, name) VALUES ('$id', '$comment','$_SESSION[login]')";
+           }
+		  
+           elseif(isset($_SESSION['admin_login'])) //로그인한 사람이 관리자일 때
+          {
+      	     $ql = "INSERT INTO comment (memo_id, content, name) VALUES ('$id', '$comment','$_SESSION[admin_login]')";
+          }
+          mysqli_query($con,$ql);
+          $qul = "SELECT * FROM comment WHERE memo_id='$id'"; //게시글의 댓글을 불러오기 위한 쿼리문, 즉 게시글의 id가 일치해야 한다
+          $val2 = mysqli_query($con,$qul);
 
+          $id =  stripslashes($id);
+          $id = trim($id,"'");
+         }
 
- 	    $id =  stripslashes($id);
-     	$id = trim($id,"'");
-     }
-
-     $qul = "SELECT * FROM comment WHERE memo_id='$id'";
-     $val = mysqli_query($con,$qul);
+         $qul = "SELECT * FROM comment WHERE memo_id='$id'";
+         $val = mysqli_query($con,$qul);
 
 	   echo "<table align='center' border='1'>
-	           <tr><th>Name</th><th>Comment</th><th>Reg_Date</th><th>Delete?</th></tr>";
+	   <tr><th>Name</th><th>Comment</th><th>Reg_Date</th><th>Delete?</th></tr>";
 
-		  while($mow = mysqli_fetch_array($val))
+	  while($mow = mysqli_fetch_array($val))  //fetch해서 한 줄 한 줄 읽어온다
   	  {
   		echo "<tr>";
   		echo "<td>" . $mow['name'] . "</td>";
    		echo "<td>" . $mow['content'] . "</td>";
-    	echo "<td>" . $mow['reg_date'] . "</td>";
+    	        echo "<td>" . $mow['reg_date'] . "</td>";
        
-      if(isset($_SESSION['login'])) {
-    	if($_SESSION['login'] == $mow['name']) {
-    		echo "<td><a href='com_delete.php?id=".$mow['id']."&memo_id=". $mow['memo_id'] . "'>delete</a></td>";
-      }
-    }
-      elseif(isset($_SESSION['admin_login']))
-      {
-      	echo "<td><a href='com_delete.php?id=".$mow['id']."&memo_id=". $mow['memo_id'] . "'>delete</a></td>";
-      }
-    	echo "<tr>";
+               if(isset($_SESSION['login'])) { //로그인한 세션이 있을 때, 즉 사용자이고
+    	       if($_SESSION['login'] == $mow['name']) {  //로그인한 사용자의 이름과 글쓴이의 이름이 일치한다면,
+    		echo "<td><a href='com_delete.php?id=".$mow['id']."&memo_id=". $mow['memo_id'] . "'>delete</a></td>"; //표의 마지막 열에 삭제할 수 있는 링크 추가
+                  }
+                 }
+             elseif(isset($_SESSION['admin_login'])) //만약 관리자로 로그인했다면,
+             {
+      	        echo "<td><a href='com_delete.php?id=".$mow['id']."&memo_id=". $mow['memo_id'] . "'>delete</a></td>"; //삭제 링크 당연히 추가
+             }
+    	     echo "<tr>";
   	}
-  	echo "</table>";
+  	echo "</table>"; //
   ?>
 </body>
 </html>
