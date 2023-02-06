@@ -7,44 +7,15 @@ if (isset($_SESSION['admin_login']))
 }
 if(isset($_SESSION['login']))
 {
-	include 'name.php';
+   include 'name.php';
 }
 ?>
 <html>
 <head>
-	<style>
-	html 
-	{
-		background-color : #FFE4B5;
-	    background-image: url('https://cdn.pixabay.com/photo/2017/01/31/00/09/books-2022464_960_720.png');
-	    background-repeat : no-repeat;
-	    background-position: right top;
-	}
-	body
-	{
-	  width : 800PX;
-	  height : auto;
-	  margin : 1em auto;
-      background-color: #FDF5E6;
-	  border : 10px #CCFF33 double;
-	  text-align: center;
-	}
-	table
-	{
-		border-collapse: collapse;
-	}
-	th, td {
-    padding: 15px;
-    text-align: center;
-  }
-  th 
-  {
-  	background-color: greenyellow;
-  }
-	</style>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
+	<link href='style/style.css' rel='stylesheet'></link>
 </head>
 <body>
     <h2> You can Borrow the Book you want here !! </h2>
