@@ -26,7 +26,7 @@ if(isset($_SESSION['login']))
 
 	body
 	{
-	  width : 1000PX;
+	  width : 1000px;
 	  height : 1500px;
 	  margin : 1em auto;
       background-color: #FDF5E6;
