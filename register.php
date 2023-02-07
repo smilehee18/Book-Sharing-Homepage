@@ -12,40 +12,10 @@ if(isset($_SESSION['login']))
 ?>
 <html>
 <head>
-<style>
-	html
-	{
-		background-color : #FFE4B5;
-	    background-image: url('https://cdn.pixabay.com/photo/2017/01/31/00/09/books-2022464_960_720.png');
-	    background-repeat : no-repeat;
-	    background-position: right top;
-	}
-	body
-	{
-	  width : 900PX;
-	  height : 800px;
-	  margin : 1em auto;
-      background-color: #FDF5E6;
-	  border : 10px #CCFF33 double;
-	  text-align: center;
-
-	}
-	table
-	{
-		border-collapse: collapse;
-	}
-	th, td {
-    padding: 15px;
-    text-align: center;
-  }
-  th 
-  {
-  	background-color: greenyellow;
-  }
-</style>
-		<title>Registration page</title>
-	</head>
-	<body style = "text-align: center;">
+<title>Registration page</title>
+<link href='style/style.css' rel='stylesheet'></link>
+</head>
+<body style = "text-align: center;">
    <?php
      if(isset($_GET['MSG']))
      {
