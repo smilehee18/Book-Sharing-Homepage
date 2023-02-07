@@ -3,6 +3,9 @@
 + #### WebServer : XAMPP 
 + #### Database : MySQL 
 +  #### copyright : smilehee18
+
+## Structure (알고리즘 흐름도)
+<img width="400" alt="waiting" src="https://user-images.githubusercontent.com/123307856/217313059-6cf54c89-0126-46ff-b176-e00a5b1526fe.jpg"></img>
 ## Main Page (index.php)
 <img width="800" height="500" alt="화면 캡처 2023-01-25 194135" src="https://user-images.githubusercontent.com/123307856/214543719-4068c7f0-ce11-4032-8afd-21ee4ba13c27.png"></img>
 ***
@@ -30,6 +33,9 @@
 </img>
 
 ***
+## Share Books Page(도서 공유 페이지) - list.php, write.php, writepost.php, view.php, com_delete.php, get.php, image.php and so on.
+<img width="600" alt="waiting" src="https://user-images.githubusercontent.com/123307856/217313035-209680d5-f6d7-4d97-b335-13e763143a23.jpg"></img>
+
 
 
 
