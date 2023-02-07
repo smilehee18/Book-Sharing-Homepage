@@ -7,32 +7,7 @@ session_start();
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Edit_users</title>
-	<style>
-	html 
-	{
-	  background-color : #FFE4B5;
-	  background-image: url('https://cdn.pixabay.com/photo/2017/01/31/00/09/books-2022464_960_720.png');
-	  background-repeat : no-repeat;
-	  background-position: right top;
-	}
-	body
-	{
-	  width : 700PX;
-	  height : 1500px;
-	  margin : 1em auto;
-      background-color: #FDF5E6;
-	  border : 10px #CCFF33 double;
-	  text-align: center;
-	}
-	a
-	{
-      color: blue;
-	}
-	.red
-	{
-	  color: red;
-	}
-	</style>
+	<link href='style/style.css' rel='stylesheet'></link>
 </head>
 <body>
 	<?php include 'name.php';?>
