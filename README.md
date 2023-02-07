@@ -34,7 +34,14 @@
 
 ***
 ## Share Books Page(도서 공유 페이지) - list.php, write.php, writepost.php, view.php, com_delete.php, get.php, image.php and so on.
-<img width="600" alt="waiting" src="https://user-images.githubusercontent.com/123307856/217313035-209680d5-f6d7-4d97-b335-13e763143a23.jpg"></img>
+<img width="800" alt="화면 캡처 2023-02-08 005222" src="https://user-images.githubusercontent.com/123307856/217316320-02f14918-5825-4252-8c48-ea8bd69ab60d.png">
+</img>
+<img width="800" alt="화면 캡처 2023-02-08 005358" src="https://user-images.githubusercontent.com/123307856/217316338-080150ab-9491-4f0f-badb-01ad9819187c.png">
+</img>
+<img width="800" alt="화면 캡처 2023-02-08 005545" src="https://user-images.githubusercontent.com/123307856/217316339-7eeb4ca6-b2f8-4cdb-8d19-2e3d5add1d4c.png">
+</img>
+<img width="703" alt="화면 캡처 2023-02-08 010448" src="https://user-images.githubusercontent.com/123307856/217316351-6ccd9c35-5f45-4ce0-a60d-d1a44d741218.png">
+</img>
 
 
 
